@@ -9,15 +9,25 @@
 
 require 'pry-byebug'
 
-def bubble_sort (data)
-    swapped = false
-    array_unsorted = data.length 
-    array_sorted = []
+def bubble_sort (array)
+    num = array.length 
 
-    for i in i = 1
+    loop do 
 
-    binding.pry
+        sorted = false 
 
+        (num - 1).times do |i|
+            if array[i] > array[i + 1]
+                array[i], array[i + 1] = array[i + 1], array[i]
+                sorted = true
+        end
+    end
+    break if not sorted 
+
+    end
+    array
 end
 
-bubble_sort([4,3,78,2,0,2])
+x = [4,3,78,2,0,2,55,2,34,53,978,432,4678]
+
+p bubble_sort(x)
